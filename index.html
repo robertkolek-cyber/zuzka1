@@ -6,28 +6,28 @@
   <title>Zeta Real Estate — Bratislava</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ivory: #F6F1E8;
-      --ivory-dark: #EDE6D8;
-      --charcoal: #1A1A1A;
-      --charcoal-soft: #3A3A3A;
-      --gold: #B8963E;
-      --gold-light: #D4B96A;
-      --green: #1E3128;
-      --cream: #FAF7F2;
-      --border: #D8CFC0;
-      --text-light: #8A8070;
+      --navy:       #0B1E3D;
+      --navy-mid:   #122548;
+      --blue:       #1A56DB;
+      --blue-soft:  #EBF2FF;
+      --white:      #FFFFFF;
+      --off-white:  #F7F9FC;
+      --charcoal:   #0F172A;
+      --mid:        #64748B;
+      --border:     #E2E8F0;
+      --text:       #1E293B;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--cream);
-      color: var(--charcoal);
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
@@ -36,16 +36,16 @@
     h1, h2, h3, h4 {
       font-family: 'Cormorant Garant', serif;
       font-weight: 400;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
     }
 
     .label {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--blue);
     }
 
     /* NAV */
@@ -53,656 +53,699 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 1.5rem 4rem;
+      padding: 1.75rem 5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.4s, padding 0.4s;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
     }
     nav.scrolled {
-      background: rgba(250, 247, 242, 0.96);
-      backdrop-filter: blur(12px);
-      padding: 1rem 4rem;
-      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
+      padding: 1.1rem 5rem;
+      box-shadow: 0 1px 0 var(--border);
     }
     .nav-logo {
       font-family: 'Cormorant Garant', serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 500;
-      letter-spacing: 0.15em;
-      color: var(--cream);
+      letter-spacing: 0.12em;
+      color: var(--white);
       text-decoration: none;
       display: flex;
       flex-direction: column;
       line-height: 1;
+      transition: color 0.4s;
     }
-    nav.scrolled .nav-logo { color: var(--charcoal); }
+    nav.scrolled .nav-logo { color: var(--navy); }
     .nav-logo span {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.48rem;
       font-weight: 400;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 0.2rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.25rem;
+      transition: color 0.4s;
     }
+    nav.scrolled .nav-logo span { color: var(--blue); }
     .nav-links {
       display: flex;
-      gap: 3rem;
+      align-items: center;
+      gap: 2.5rem;
       list-style: none;
     }
     .nav-links a {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(250,247,242,0.85);
+      color: rgba(255,255,255,0.75);
       text-decoration: none;
       transition: color 0.3s;
     }
-    nav.scrolled .nav-links a { color: var(--charcoal-soft); }
-    .nav-links a:hover { color: var(--gold); }
+    nav.scrolled .nav-links a { color: var(--mid); }
+    .nav-links a:hover { color: var(--white); }
+    nav.scrolled .nav-links a:hover { color: var(--blue); }
     .nav-cta {
-      font-size: 0.6rem !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.18em !important;
-      color: var(--gold) !important;
-      border: 1px solid var(--gold);
-      padding: 0.6rem 1.4rem;
-      transition: background 0.3s, color 0.3s;
+      background: var(--blue) !important;
+      color: var(--white) !important;
+      padding: 0.65rem 1.5rem;
+      border-radius: 2px;
+      transition: opacity 0.3s !important;
     }
-    .nav-cta:hover {
-      background: var(--gold) !important;
-      color: var(--cream) !important;
-    }
+    .nav-cta:hover { opacity: 0.85; }
 
     /* HERO */
     .hero {
-      height: 100vh;
-      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--navy);
+    }
+    .hero-left {
       display: flex;
-      align-items: flex-end;
-      padding: 0 4rem 6rem;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 5rem 6rem;
+    }
+    .hero-left .label { color: rgba(255,255,255,0.45); margin-bottom: 2rem; }
+    .hero-left h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+      margin-bottom: 2rem;
+    }
+    .hero-left h1 em {
+      font-style: italic;
+      color: #6EA8FF;
+    }
+    .hero-left p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.85;
+      max-width: 400px;
+      margin-bottom: 3rem;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 2rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      transition: opacity 0.3s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost {
+      display: inline-block;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.2rem;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .btn-ghost:hover { color: var(--white); border-color: var(--white); }
+    .hero-meta {
+      margin-top: auto;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      gap: 3rem;
+    }
+    .hero-stat { display: flex; flex-direction: column; gap: 0.25rem; }
+    .hero-stat strong {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .hero-right {
+      position: relative;
       overflow: hidden;
     }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&auto=format&fit=crop&q=80');
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.6);
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.75) saturate(0.9);
       transform: scale(1.06);
       transition: transform 9s ease;
     }
-    .hero-bg.loaded { transform: scale(1); }
-    .hero-overlay {
+    .hero-right img.loaded { transform: scale(1); }
+    .hero-right::after {
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15,15,15,0.78) 0%, rgba(15,15,15,0.05) 55%, transparent 100%);
+      background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 720px;
+
+    /* TICKER */
+    .ticker {
+      background: var(--blue);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      white-space: nowrap;
     }
-    .hero-content .label { color: var(--gold-light); margin-bottom: 1.5rem; display: block; }
-    .hero-content h1 {
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.08;
-      letter-spacing: 0.01em;
-      margin-bottom: 1.5rem;
+    .ticker-inner {
+      display: inline-flex;
+      gap: 4rem;
+      animation: ticker 22s linear infinite;
     }
-    .hero-content h1 em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-    .hero-content p {
-      font-size: 0.85rem;
-      color: rgba(250,247,242,0.72);
-      letter-spacing: 0.04em;
-      max-width: 460px;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-    }
-    .hero-cta {
-      display: inline-block;
+    .ticker-inner span {
       font-size: 0.65rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--cream);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 0.3rem;
-      transition: color 0.3s;
+      color: rgba(255,255,255,0.75);
     }
-    .hero-cta:hover { color: var(--gold); }
-    .hero-scroll {
-      position: absolute;
-      bottom: 3rem; right: 4rem;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      writing-mode: vertical-rl;
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(250,247,242,0.45);
+    .ticker-inner span::before {
+      content: '◆';
+      margin-right: 4rem;
+      opacity: 0.4;
     }
-    .hero-scroll::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 55px;
-      background: var(--gold);
-      opacity: 0.55;
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
     }
 
-    /* DIVIDER */
-    .divider {
-      display: flex;
+    /* INTRO */
+    .intro {
+      padding: 9rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 8rem;
       align-items: center;
-      gap: 1.5rem;
-      padding: 0 4rem;
+      background: var(--white);
     }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-    .divider-mark {
-      width: 6px; height: 6px;
-      border: 1px solid var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-    }
-
-    /* SECTIONS */
-    section { padding: 7rem 4rem; }
-    .section-header { margin-bottom: 4rem; }
-    .section-header .label { display: block; margin-bottom: 1rem; }
-    .section-header h2 {
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
+    .intro-left .label { margin-bottom: 1.5rem; display: block; }
+    .intro-left h2 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
       font-weight: 300;
-      line-height: 1.2;
+      line-height: 1.15;
       color: var(--charcoal);
     }
-    .section-header h2 em { font-style: italic; color: var(--charcoal-soft); }
-
-    /* MANIFESTO */
-    .manifesto {
-      background: var(--green);
-      padding: 7rem 4rem;
-      text-align: center;
+    .intro-left h2 em { font-style: italic; }
+    .intro-right p {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.95;
+      margin-bottom: 1.5rem;
     }
-    .manifesto blockquote {
-      font-family: 'Cormorant Garant', serif;
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--ivory);
-      line-height: 1.45;
-      max-width: 820px;
-      margin: 0 auto;
-      letter-spacing: 0.02em;
-    }
-    .manifesto blockquote cite {
-      display: block;
-      margin-top: 2rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
+    .intro-right p:last-child { margin-bottom: 0; }
 
     /* PROPERTIES */
-    .properties { background: var(--ivory); }
+    .properties {
+      background: var(--off-white);
+      padding: 7rem 5rem;
+    }
+    .properties-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+    .properties-header .label { margin-bottom: 1rem; display: block; }
+    .properties-header h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--charcoal);
+    }
+    .view-all {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      border-bottom: 1px solid var(--blue);
+      padding-bottom: 0.2rem;
+      white-space: nowrap;
+      transition: opacity 0.3s;
+    }
+    .view-all:hover { opacity: 0.65; }
     .properties-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
     .property-card {
+      background: var(--white);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .property-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(11,30,61,0.12);
+    }
+    .property-card:first-child { grid-column: span 2; }
+    .card-image {
       position: relative;
       overflow: hidden;
-      cursor: pointer;
-      background: var(--charcoal);
     }
-    .property-card:first-child { grid-row: span 2; }
-    .property-card img {
-      width: 100%; height: 100%;
-      object-fit: cover;
+    .card-image img {
+      width: 100%;
       display: block;
-      filter: brightness(0.82);
-      transition: filter 0.6s ease, transform 0.8s ease;
-      min-height: 280px;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+      filter: brightness(0.92);
     }
-    .property-card:first-child img { min-height: 580px; }
-    .property-card:hover img {
-      filter: brightness(0.65);
-      transform: scale(1.04);
-    }
-    .property-info {
+    .property-card:first-child .card-image img { height: 420px; }
+    .property-card:hover .card-image img { transform: scale(1.04); }
+    .card-badge {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 2.5rem 1.75rem 1.75rem;
-      background: linear-gradient(to top, rgba(12,12,12,0.88) 0%, transparent 100%);
-    }
-    .property-tag {
+      top: 1.25rem;
+      left: 1.25rem;
+      background: var(--navy);
+      color: var(--white);
       font-size: 0.58rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 0.4rem;
-      display: block;
+      padding: 0.35rem 0.85rem;
     }
-    .property-name {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1.45rem;
-      font-weight: 400;
-      color: var(--cream);
-      letter-spacing: 0.02em;
-      margin-bottom: 0.3rem;
-    }
-    .property-detail {
-      font-size: 0.65rem;
-      color: rgba(250,247,242,0.55);
-      letter-spacing: 0.08em;
-    }
-    .property-price {
-      position: absolute;
-      top: 1.5rem; right: 1.5rem;
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1.05rem;
+    .card-body { padding: 1.75rem 1.75rem 2rem; }
+    .card-location {
+      font-size: 0.62rem;
       font-weight: 500;
-      color: var(--cream);
-      background: rgba(184,150,62,0.88);
-      padding: 0.3rem 0.85rem;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
     }
+    .card-name {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+    .card-detail {
+      font-size: 0.72rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .card-price {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+    .card-link {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .card-link:hover { opacity: 0.65; }
 
     /* ABOUT */
     .about {
+      padding: 9rem 5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
-      padding: 0;
-      min-height: 80vh;
+      gap: 7rem;
+      align-items: center;
+      background: var(--white);
     }
-    .about-image {
-      position: relative;
-      overflow: hidden;
+    .about-content .label { margin-bottom: 1.5rem; display: block; }
+    .about-content h2 {
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.18;
+      color: var(--charcoal);
+      margin-bottom: 2rem;
     }
-    .about-image img {
-      width: 100%; height: 100%;
+    .about-content h2 em { font-style: italic; }
+    .about-content p {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.95;
+      margin-bottom: 1.25rem;
+      max-width: 480px;
+    }
+    .about-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      border-bottom: 1px solid var(--blue);
+      padding-bottom: 0.2rem;
+      transition: opacity 0.3s;
+    }
+    .about-cta:hover { opacity: 0.65; }
+    .about-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .about-image-grid img {
+      width: 100%; display: block;
       object-fit: cover;
-      object-position: center 20%;
-      display: block;
-      filter: brightness(0.88) saturate(0.85);
+      filter: brightness(0.9) saturate(0.85);
     }
-    .about-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-right: 3px solid rgba(184,150,62,0.45);
-      pointer-events: none;
+    .about-image-grid img:first-child {
+      grid-column: span 2;
+      height: 320px;
     }
-    .about-content {
-      background: var(--cream);
+    .about-image-grid img:not(:first-child) { height: 180px; }
+
+    /* SERVICES */
+    .services {
+      background: var(--navy);
+      padding: 9rem 5rem;
+    }
+    .services-header { margin-bottom: 5rem; }
+    .services-header .label { color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; display: block; }
+    .services-header h2 {
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.18;
+    }
+    .services-header h2 em { font-style: italic; color: #6EA8FF; }
+    .services-list { display: flex; flex-direction: column; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .service-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .service-num {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.08);
+      line-height: 1;
+    }
+    .service-title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      padding-top: 0.4rem;
+    }
+    .service-text {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.9;
+      padding-top: 0.4rem;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial {
+      background: var(--blue-soft);
+      padding: 8rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .testimonial-label .label { margin-bottom: 1.5rem; display: block; }
+    .testimonial-label h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+    .testimonial-label h2 em { font-style: italic; }
+    .testimonial-content blockquote {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.55;
+      margin-bottom: 2.5rem;
+    }
+    .testimonial-author { display: flex; flex-direction: column; gap: 0.3rem; }
+    .testimonial-author strong { font-size: 0.88rem; font-weight: 500; color: var(--charcoal); }
+    .testimonial-author span {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    /* CONTACT */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+    }
+    .contact-left {
+      background: var(--navy);
       padding: 7rem 5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    .about-content .label { margin-bottom: 1rem; }
-    .about-content h2 {
-      font-size: clamp(2rem, 3vw, 2.8rem);
+    .contact-left .label { color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; display: block; }
+    .contact-left h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
       font-weight: 300;
-      line-height: 1.25;
-      margin-bottom: 2rem;
-      color: var(--charcoal);
-    }
-    .about-content p {
-      font-size: 0.82rem;
-      color: var(--charcoal-soft);
-      line-height: 1.9;
-      margin-bottom: 1.25rem;
-      max-width: 460px;
-    }
-    .about-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 3rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .stat-item { display: flex; flex-direction: column; }
-    .stat-number {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-top: 0.4rem;
-    }
-
-    /* SERVICES */
-    .services { background: var(--ivory); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--border);
-    }
-    .service-item {
-      padding: 3rem 2.5rem 3rem 0;
-      border-right: 1px solid var(--border);
-    }
-    .service-item:last-child { border-right: none; padding-right: 0; }
-    .service-item:not(:first-child) { padding-left: 2.5rem; }
-    .service-number {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: var(--border);
-      line-height: 1;
+      color: var(--white);
+      line-height: 1.2;
       margin-bottom: 1.5rem;
     }
-    .service-title {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--charcoal);
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.02em;
-    }
-    .service-text {
-      font-size: 0.78rem;
-      color: var(--text-light);
-      line-height: 1.85;
-    }
-
-    /* TESTIMONIAL */
-    .testimonial {
-      background: var(--charcoal);
-      text-align: center;
-      padding: 9rem 4rem;
-    }
-    .testimonial blockquote {
-      font-family: 'Cormorant Garant', serif;
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--ivory);
-      line-height: 1.55;
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      letter-spacing: 0.02em;
-    }
-    .testimonial-author {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .testimonial-author strong {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--ivory);
-      letter-spacing: 0.05em;
-    }
-    .testimonial-author span {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .testimonial-dots {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 3rem;
-    }
-    .testimonial-dots span {
-      width: 5px; height: 5px;
-      background: var(--gold);
-      border-radius: 50%;
-      opacity: 0.35;
-      transition: opacity 0.4s;
-    }
-    .testimonial-dots span.active { opacity: 1; }
-
-    /* CONTACT */
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 6rem;
-      padding: 8rem 4rem;
-    }
-    .contact-info .label { margin-bottom: 1rem; }
-    .contact-info h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
-      color: var(--charcoal);
-      line-height: 1.2;
-      margin-bottom: 2rem;
-    }
-    .contact-info p {
-      font-size: 0.82rem;
-      color: var(--text-light);
+    .contact-left h2 em { font-style: italic; color: #6EA8FF; }
+    .contact-left p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
       line-height: 1.9;
       margin-bottom: 3rem;
-      max-width: 380px;
+      max-width: 360px;
     }
     .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
-    .contact-detail-item { display: flex; flex-direction: column; gap: 0.25rem; }
-    .contact-detail-item .label { color: var(--text-light); }
-    .contact-detail-item a, .contact-detail-item span {
+    .contact-detail { display: flex; flex-direction: column; gap: 0.25rem; }
+    .contact-detail .label { color: rgba(255,255,255,0.25); }
+    .contact-detail a, .contact-detail span {
       font-family: 'Cormorant Garant', serif;
       font-size: 1.05rem;
-      color: var(--charcoal);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
       letter-spacing: 0.02em;
       line-height: 1.5;
+      transition: color 0.3s;
     }
-    .contact-detail-item a:hover { color: var(--gold); }
-
-    form { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-detail a:hover { color: #6EA8FF; }
+    .contact-right {
+      background: var(--white);
+      padding: 7rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact-right h3 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 2.5rem;
+    }
+    form { display: flex; flex-direction: column; gap: 1.75rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
     .form-group label {
-      font-size: 0.58rem;
+      font-size: 0.6rem;
       font-weight: 500;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--text-light);
+      color: var(--mid);
     }
     .form-group input, .form-group select, .form-group textarea {
       background: transparent;
       border: none;
       border-bottom: 1px solid var(--border);
       padding: 0.75rem 0;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
       font-weight: 300;
-      color: var(--charcoal);
+      color: var(--text);
       outline: none;
       transition: border-color 0.3s;
-      -webkit-appearance: none;
       appearance: none;
     }
-    .form-group input::placeholder, .form-group textarea::placeholder {
-      color: var(--border);
-    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--border); }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-bottom-color: var(--gold);
+      border-bottom-color: var(--blue);
     }
-    .form-group textarea { resize: none; min-height: 90px; }
+    .form-group textarea { resize: none; min-height: 80px; }
     .form-group select { cursor: pointer; }
     .form-submit {
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
       align-self: flex-start;
       margin-top: 0.5rem;
-      background: var(--green);
-      color: var(--cream);
+      background: var(--blue);
+      color: var(--white);
       border: none;
-      padding: 1rem 2.5rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
+      padding: 1rem 2.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background 0.3s;
+      border-radius: 2px;
+      transition: opacity 0.3s;
     }
-    .form-submit:hover { background: var(--gold); }
-    .form-submit::after { content: '→'; font-size: 1rem; font-weight: 300; }
+    .form-submit:hover { opacity: 0.8; }
 
     /* FOOTER */
     footer {
       background: var(--charcoal);
-      padding: 5rem 4rem 3rem;
+      padding: 5rem 5rem 3rem;
     }
     .footer-top {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
       gap: 4rem;
       padding-bottom: 4rem;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .footer-brand {
       font-family: 'Cormorant Garant', serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 400;
-      letter-spacing: 0.15em;
-      color: var(--ivory);
+      letter-spacing: 0.12em;
+      color: var(--white);
     }
     .footer-brand span {
       display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.48rem;
       font-weight: 400;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--blue);
       margin-top: 0.3rem;
     }
     .footer-brand p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
       font-weight: 300;
-      color: rgba(246,241,232,0.38);
-      line-height: 1.8;
+      color: rgba(255,255,255,0.28);
+      line-height: 1.85;
       margin-top: 1.5rem;
       max-width: 260px;
     }
     .footer-col h4 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.58rem;
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--blue);
       margin-bottom: 1.5rem;
     }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.75rem; }
     .footer-col ul li a {
-      font-size: 0.78rem;
-      color: rgba(246,241,232,0.45);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
       text-decoration: none;
       transition: color 0.3s;
-      letter-spacing: 0.03em;
     }
-    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-col ul li a:hover { color: var(--white); }
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-top: 2rem;
     }
-    .footer-bottom p {
-      font-size: 0.62rem;
-      color: rgba(246,241,232,0.22);
-      letter-spacing: 0.08em;
-    }
-    .footer-bottom a {
-      color: rgba(246,241,232,0.22);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .footer-bottom a:hover { color: var(--gold); }
+    .footer-bottom p { font-size: 0.63rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+    .footer-bottom a { color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.3s; }
+    .footer-bottom a:hover { color: var(--white); }
 
     /* ANIMATIONS */
     .fade-up {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .fade-up:nth-child(2) { transition-delay: 0.1s; }
-    .fade-up:nth-child(3) { transition-delay: 0.2s; }
-    .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.08s; }
+    .fade-up:nth-child(3) { transition-delay: 0.16s; }
+    .fade-up:nth-child(4) { transition-delay: 0.24s; }
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
       nav, nav.scrolled { padding-left: 2rem; padding-right: 2rem; }
-      section { padding: 5rem 2rem; }
-      .hero { padding: 0 2rem 5rem; }
-      .divider { padding: 0 2rem; }
-      .manifesto { padding: 5rem 2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 9rem 2rem 5rem; }
+      .intro { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 2rem; }
+      .properties { padding: 6rem 2rem; }
       .properties-grid { grid-template-columns: 1fr 1fr; }
-      .property-card:first-child { grid-column: span 2; grid-row: span 1; }
-      .property-card:first-child img { min-height: 400px; }
-      .about { grid-template-columns: 1fr; min-height: auto; }
-      .about-image { height: 55vh; }
-      .about-image::after { border-right: none; border-bottom: 3px solid rgba(184,150,62,0.45); }
-      .about-content { padding: 4rem 2rem; }
-      .contact { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .property-card:first-child { grid-column: span 2; }
+      .about { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 2rem; }
+      .services { padding: 6rem 2rem; }
+      .service-row { grid-template-columns: 60px 1fr; gap: 1.5rem; }
+      .service-text { grid-column: 2; }
+      .testimonial { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 2rem; }
+      .contact { grid-template-columns: 1fr; }
+      .contact-left, .contact-right { padding: 5rem 2rem; }
       footer { padding: 4rem 2rem 2.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero-content h1 { font-size: 2.8rem; }
       .properties-grid { grid-template-columns: 1fr; }
       .property-card:first-child { grid-column: 1; }
-      .services-grid { grid-template-columns: 1fr; }
-      .service-item { border-right: none; border-bottom: 1px solid var(--border); padding: 2.5rem 0; }
-      .service-item:not(:first-child) { padding-left: 0; }
+      .service-row { grid-template-columns: 1fr; gap: 0.75rem; }
+      .service-num { font-size: 2rem; }
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
-      .about-stats { flex-wrap: wrap; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .about-image-grid { grid-template-columns: 1fr; }
+      .about-image-grid img:first-child { grid-column: 1; }
+      .hero-meta { flex-wrap: wrap; gap: 2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav id="nav">
     <a href="#" class="nav-logo">
       ZETA
@@ -712,208 +755,228 @@
       <li><a href="#properties">Properties</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#contact" class="nav-cta">Private Enquiry</a></li>
+      <li><a href="#contact" class="nav-cta">Enquire</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg" id="heroBg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
+    <div class="hero-left">
       <span class="label">Bratislava &middot; Prime Residences</span>
-      <h1>Every Address<br>Tells a <em>Story.</em><br>Let Yours Be<br>Extraordinary.</h1>
-      <p>Discreet representation of Bratislava&rsquo;s finest residential estates. For those who understand that a home is never merely a transaction.</p>
-      <a href="#properties" class="hero-cta">Explore Current Collection</a>
+      <h1>Find the home<br>that fits your<br><em>next chapter.</em></h1>
+      <p>Curated selection of Bratislava&rsquo;s finest properties. We make the complex feel effortless &mdash; from first viewing to final signature.</p>
+      <div class="hero-actions">
+        <a href="#properties" class="btn-primary">Browse Properties</a>
+        <a href="#about" class="btn-ghost">Our Story</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-stat"><strong>&euro;180M+</strong><span>Transacted</span></div>
+        <div class="hero-stat"><strong>12</strong><span>Years Active</span></div>
+        <div class="hero-stat"><strong>97%</strong><span>Client Retention</span></div>
+      </div>
     </div>
-    <div class="hero-scroll">Scroll</div>
+    <div class="hero-right">
+      <img id="heroImg"
+        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80"
+        alt="Luxury residence Bratislava">
+    </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <div class="manifesto">
-    <blockquote>
-      &ldquo;We don&rsquo;t list properties.<br>We curate <em>legacies.</em>&rdquo;
-      <cite>&mdash; Zeta Real Estate, Est. Bratislava</cite>
-    </blockquote>
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>Koliba Hills</span><span>Star&eacute; Mesto</span><span>Kram&aacute;re</span>
+      <span>Riverfront</span><span>Off-Market Listings</span><span>Investment Advisory</span>
+      <span>Koliba Hills</span><span>Star&eacute; Mesto</span><span>Kram&aacute;re</span>
+      <span>Riverfront</span><span>Off-Market Listings</span><span>Investment Advisory</span>
+    </div>
   </div>
+
+  <!-- INTRO -->
+  <section class="intro" id="intro">
+    <div class="intro-left fade-up">
+      <span class="label">Why Zeta</span>
+      <h2>We know every<br>street. Every<br><em>door.</em></h2>
+    </div>
+    <div class="intro-right fade-up">
+      <p>Zeta Real Estate was built for people who expect more &mdash; more transparency, more access, more care. We don’t believe in bloated portfolios or passive service. Instead, we maintain a deliberately small roster of exceptional properties and give each one our full attention.</p>
+      <p>Whether you’re buying your first investment or your fifth home, we show up with the same energy: honest advice, deep local knowledge, and a genuine desire to get it right for you.</p>
+    </div>
+  </section>
 
   <!-- PROPERTIES -->
   <section class="properties" id="properties">
-    <div class="section-header fade-up">
-      <span class="label">Current Collection</span>
-      <h2>Residences of<br><em>Distinction</em></h2>
+    <div class="properties-header">
+      <div class="fade-up">
+        <span class="label">Current Listings</span>
+        <h2>Properties worth<br>your time</h2>
+      </div>
+      <a href="#contact" class="view-all fade-up">View all &rarr;</a>
     </div>
     <div class="properties-grid">
-
       <div class="property-card fade-up">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&auto=format&fit=crop&q=80" alt="The Koliba Residence" loading="lazy">
-        <div class="property-price">&euro;&thinsp;2,850,000</div>
-        <div class="property-info">
-          <span class="property-tag">Koliba Hills</span>
-          <div class="property-name">The Koliba Residence</div>
-          <div class="property-detail">6 bed &middot; 580 m&sup2; &middot; Private garden &amp; pool</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&auto=format&fit=crop&q=80" alt="The Koliba Residence" loading="lazy">
+          <div class="card-badge">Featured</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Koliba Hills</div>
+          <div class="card-name">The Koliba Residence</div>
+          <div class="card-detail">6 bed &middot; 580 m&sup2; &middot; Private garden &amp; pool</div>
+          <div class="card-footer">
+            <div class="card-price">&euro; 2,850,000</div>
+            <a href="#contact" class="card-link">Enquire &rarr;</a>
+          </div>
         </div>
       </div>
-
       <div class="property-card fade-up">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&auto=format&fit=crop&q=80" alt="Star&eacute; Mesto Penthouse" loading="lazy">
-        <div class="property-price">&euro;&thinsp;1,490,000</div>
-        <div class="property-info">
-          <span class="property-tag">Old Town &middot; Star&eacute; Mesto</span>
-          <div class="property-name">Star&eacute; Mesto Penthouse</div>
-          <div class="property-detail">3 bed &middot; 210 m&sup2; &middot; Rooftop terrace</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&auto=format&fit=crop&q=80" alt="Star&eacute; Mesto Penthouse" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-location">Old Town &middot; Star&eacute; Mesto</div>
+          <div class="card-name">Star&eacute; Mesto Penthouse</div>
+          <div class="card-detail">3 bed &middot; 210 m&sup2; &middot; Rooftop terrace</div>
+          <div class="card-footer">
+            <div class="card-price">&euro; 1,490,000</div>
+            <a href="#contact" class="card-link">Enquire &rarr;</a>
+          </div>
         </div>
       </div>
-
       <div class="property-card fade-up">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&auto=format&fit=crop&q=80" alt="Danube Waterfront Villa" loading="lazy">
-        <div class="property-price">&euro;&thinsp;3,200,000</div>
-        <div class="property-info">
-          <span class="property-tag">&Ccaron;unovo &middot; Riverfront</span>
-          <div class="property-name">Danube Waterfront Villa</div>
-          <div class="property-detail">5 bed &middot; 620 m&sup2; &middot; Private dock</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&auto=format&fit=crop&q=80" alt="Danube Waterfront Villa" loading="lazy">
+          <div class="card-badge">Off-market</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">&Ccaron;unovo &middot; Riverfront</div>
+          <div class="card-name">Danube Waterfront Villa</div>
+          <div class="card-detail">5 bed &middot; 620 m&sup2; &middot; Private dock</div>
+          <div class="card-footer">
+            <div class="card-price">&euro; 3,200,000</div>
+            <a href="#contact" class="card-link">Enquire &rarr;</a>
+          </div>
         </div>
       </div>
-
       <div class="property-card fade-up">
-        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=700&auto=format&fit=crop&q=80" alt="Kram&aacute;re Forest Estate" loading="lazy">
-        <div class="property-price">&euro;&thinsp;1,750,000</div>
-        <div class="property-info">
-          <span class="property-tag">Kram&aacute;re</span>
-          <div class="property-name">Kram&aacute;re Forest Estate</div>
-          <div class="property-detail">4 bed &middot; 340 m&sup2; &middot; Forested plot</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=700&auto=format&fit=crop&q=80" alt="Kram&aacute;re Forest Estate" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-location">Kram&aacute;re</div>
+          <div class="card-name">Kram&aacute;re Forest Estate</div>
+          <div class="card-detail">4 bed &middot; 340 m&sup2; &middot; Forested plot</div>
+          <div class="card-footer">
+            <div class="card-price">&euro; 1,750,000</div>
+            <a href="#contact" class="card-link">Enquire &rarr;</a>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <div class="divider"><div class="divider-mark"></div></div>
-
   <!-- ABOUT -->
-  <div class="about" id="about">
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=900&auto=format&fit=crop&q=80" alt="Zeta Real Estate" loading="lazy">
+  <section class="about" id="about">
+    <div class="about-image-grid fade-up">
+      <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=900&auto=format&fit=crop&q=80" alt="Zeta office" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&auto=format&fit=crop&q=80" alt="Property interior" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=500&auto=format&fit=crop&q=80" alt="Property detail" loading="lazy">
     </div>
     <div class="about-content">
-      <span class="label">Our Philosophy</span>
-      <h2>Exceptional Properties<br>Deserve <em>Exceptional</em><br>Representation</h2>
-      <p>Zeta Real Estate was founded on a single conviction: that the finest properties in Bratislava deserve a broker who treats every transaction as a carefully composed narrative.</p>
-      <p>We operate with complete discretion, working with a curated portfolio of buyers and sellers who value quality of relationship over volume of listings. Our knowledge of Bratislava&rsquo;s prime districts &mdash; from the hills of Koliba to the historic courtyards of Star&eacute; Mesto &mdash; is unrivalled.</p>
-      <p>Every property we represent is personally selected. Every client, personally known.</p>
-      <div class="about-stats">
-        <div class="stat-item">
-          <div class="stat-number">&euro;180M+</div>
-          <div class="stat-label">Transacted Value</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">12</div>
-          <div class="stat-label">Years in Market</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">97%</div>
-          <div class="stat-label">Client Retention</div>
-        </div>
-      </div>
+      <span class="label fade-up">About Us</span>
+      <h2 class="fade-up">Built on<br>relationships,<br><em>not transactions.</em></h2>
+      <p class="fade-up">Zeta was founded with a simple belief: that the best outcomes happen when your broker actually cares about the result &mdash; not just the commission.</p>
+      <p class="fade-up">Over 12 years, we’ve built a network across Bratislava’s most desirable districts. Our clients come back &mdash; and they bring their friends.</p>
+      <a href="#contact" class="about-cta fade-up">Work with us &rarr;</a>
     </div>
-  </div>
-
-  <div class="divider"><div class="divider-mark"></div></div>
+  </section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
-    <div class="section-header fade-up">
-      <span class="label">What We Offer</span>
-      <h2>A Complete Service,<br><em>Quietly Delivered</em></h2>
+    <div class="services-header">
+      <span class="label">What We Do</span>
+      <h2>Everything you need,<br><em>nothing you don’t.</em></h2>
     </div>
-    <div class="services-grid">
-      <div class="service-item fade-up">
-        <div class="service-number">01</div>
+    <div class="services-list">
+      <div class="service-row fade-up">
+        <div class="service-num">01</div>
         <div class="service-title">Prime Sales &amp; Acquisition</div>
-        <p class="service-text">Representing buyers and sellers in Bratislava&rsquo;s most sought-after addresses. Privileged access to off-market properties that never reach the public eye.</p>
+        <p class="service-text">Buying or selling in Bratislava’s top-tier market. We handle negotiation, legals coordination, and the bits that would otherwise keep you up at night.</p>
       </div>
-      <div class="service-item fade-up">
-        <div class="service-number">02</div>
+      <div class="service-row fade-up">
+        <div class="service-num">02</div>
         <div class="service-title">Investment Advisory</div>
-        <p class="service-text">Strategic guidance on high-value residential investments. We analyse markets, identify opportunity, and protect capital with meticulous attention to detail.</p>
+        <p class="service-text">Thinking about your first property investment? Or your fifth? We map the market, model the numbers, and help you move with confidence.</p>
       </div>
-      <div class="service-item fade-up">
-        <div class="service-number">03</div>
-        <div class="service-title">Discreet Lettings</div>
-        <p class="service-text">Premium long-term and short-term leasing of exceptional properties. Every tenant is vetted. Every arrangement handled with complete confidentiality.</p>
+      <div class="service-row fade-up">
+        <div class="service-num">03</div>
+        <div class="service-title">Off-Market Access</div>
+        <p class="service-text">Some of our best properties never reach public listings. Our network means you hear about them first &mdash; quietly, before anyone else does.</p>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIAL -->
   <div class="testimonial">
-    <blockquote>
-      &ldquo;Working with Zeta felt entirely different from any property transaction I have experienced. They understood not just the numbers, but the meaning behind the move.&rdquo;
-    </blockquote>
-    <div class="testimonial-author">
-      <strong>M. Horv&aacute;th</strong>
-      <span>Client &middot; Koliba Hills Acquisition, 2024</span>
+    <div class="testimonial-label fade-up">
+      <span class="label">Client Stories</span>
+      <h2>Heard from<br>our <em>clients</em></h2>
     </div>
-    <div class="testimonial-dots">
-      <span class="active"></span>
-      <span></span>
-      <span></span>
+    <div class="testimonial-content fade-up">
+      <blockquote>
+        &ldquo;I’d looked at properties for eight months with other agencies. Zeta found us the right place in three weeks. The difference was they actually listened to what we wanted.&rdquo;
+      </blockquote>
+      <div class="testimonial-author">
+        <strong>M. Horv&aacute;th</strong>
+        <span>Koliba Hills &middot; 2024</span>
+      </div>
     </div>
   </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <div class="contact-info fade-up">
+    <div class="contact-left">
       <span class="label">Get in Touch</span>
-      <h2>Begin a<br><em>Conversation</em></h2>
-      <p>We work with a select number of clients at any given time. If you are considering buying, selling, or simply wish to understand what is available &mdash; we would be honoured to speak with you.</p>
+      <h2>Let’s talk about<br>what you’re<br><em>looking for.</em></h2>
+      <p>No pressure, no pitch. Just an honest conversation about what’s available and whether we’re the right fit for you.</p>
       <div class="contact-details">
-        <div class="contact-detail-item">
-          <span class="label">Location</span>
+        <div class="contact-detail">
+          <span class="label">Office</span>
           <span>Vent&uacute;rska 9, Star&eacute; Mesto<br>811 01 Bratislava, Slovakia</span>
         </div>
-        <div class="contact-detail-item">
-          <span class="label">Telephone</span>
+        <div class="contact-detail">
+          <span class="label">Phone</span>
           <a href="tel:+421900000000">+421 900 000 000</a>
         </div>
-        <div class="contact-detail-item">
+        <div class="contact-detail">
           <span class="label">Email</span>
-          <a href="mailto:enquiries@zetarealestate.sk">enquiries@zetarealestate.sk</a>
+          <a href="mailto:hello@zetarealestate.sk">hello@zetarealestate.sk</a>
         </div>
       </div>
     </div>
-    <form onsubmit="return false;" class="fade-up">
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Your name">
+    <div class="contact-right">
+      <h3>Send us a message</h3>
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Your name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your surname"></div>
         </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
         <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Your surname">
+          <label>I&rsquo;m interested in</label>
+          <select>
+            <option value="" disabled selected>Select one</option>
+            <option>Buying a property</option>
+            <option>Selling a property</option>
+            <option>Investment advisory</option>
+            <option>Off-market listings</option>
+            <option>Just exploring</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="your@email.com">
-      </div>
-      <div class="form-group">
-        <label>I am interested in</label>
-        <select>
-          <option value="" disabled selected>Select enquiry type</option>
-          <option>Buying a property</option>
-          <option>Selling a property</option>
-          <option>Investment advisory</option>
-          <option>Rental enquiry</option>
-          <option>Off-market listings</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Tell us a little about what you&rsquo;re looking for&hellip;"></textarea>
-      </div>
-      <button type="submit" class="form-submit">Send Enquiry</button>
-    </form>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us what you&rsquo;re after&hellip;"></textarea></div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -922,10 +985,10 @@
       <div class="footer-brand">
         ZETA
         <span>Real Estate &middot; Bratislava</span>
-        <p>Curated representation of Bratislava&rsquo;s finest residential properties. Discretion, expertise, and uncompromising standards since 2012.</p>
+        <p>Curated residential properties in Bratislava’s prime districts. Honest advice, deep local knowledge, results you’ll want to tell your friends about.</p>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4>Navigate</h4>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#properties">Properties</a></li>
@@ -935,7 +998,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Locations</h4>
+        <h4>Districts</h4>
         <ul>
           <li><a href="#">Koliba Hills</a></li>
           <li><a href="#">Star&eacute; Mesto</a></li>
@@ -949,47 +1012,33 @@
         <ul>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">GDPR Compliance</a></li>
+          <li><a href="#">GDPR</a></li>
           <li><a href="#">Cookie Settings</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Zeta Real Estate s.r.o. &middot; All rights reserved.</p>
-      <p>Licensed broker &middot; <a href="#">Registration No. SK-2025-XXXX</a></p>
+      <p>Licensed broker &middot; <a href="#">Reg. No. SK-2025-XXXX</a></p>
     </div>
   </footer>
 
   <script>
-    // Nav scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // Hero subtle zoom-in on load
-    const heroBg = document.getElementById('heroBg');
-    setTimeout(() => heroBg.classList.add('loaded'), 100);
+    const heroImg = document.getElementById('heroImg');
+    if (heroImg.complete) heroImg.classList.add('loaded');
+    else heroImg.addEventListener('load', () => heroImg.classList.add('loaded'));
 
-    // Fade-up on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Testimonial dot cycle
-    const dots = document.querySelectorAll('.testimonial-dots span');
-    let cur = 0;
-    setInterval(() => {
-      dots[cur].classList.remove('active');
-      cur = (cur + 1) % dots.length;
-      dots[cur].classList.add('active');
-    }, 3200);
   </script>
 
 </body>
